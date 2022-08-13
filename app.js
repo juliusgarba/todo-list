@@ -27,19 +27,6 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-function displayLocalStorage() {
-  let storage = localStorage.getItem("item");
-
-  if (storage === null) {
-    items = [];
-  } else {
-    let storageParsed = JSON.parse(storage);
-    storageParsed.forEach(function (storageItem) {
-      displayItems(storageItem);
-    });
-  }
-}
-
 function addDeleteFunction(todoInput) {
   let deleteButton = document.querySelectorAll(".delete-item");
 
@@ -68,3 +55,17 @@ function addDeleteFunction(todoInput) {
     });
   });
 }
+
+function displayLocalStorage() {
+    let storage = localStorage.getItem("item");
+  
+    if (storage === null) {
+      items = [];
+    } else {
+      let storageParsed = JSON.parse(storage);
+      storageParsed.forEach(function (storageItem) {
+        displayItems(storageItem);
+      });
+    }
+  }
+  
